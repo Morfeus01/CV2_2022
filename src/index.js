@@ -6,9 +6,12 @@ import {
   Scene,
   UniversalCamera,
   MeshBuilder,
+  Path3D,
   StandardMaterial,
   DirectionalLight,
   Vector3,
+  Axis,
+  Space,
   Color3,
   SceneLoader,
   DeviceOrientationCamera,
@@ -50,20 +53,13 @@ const light1 = new DirectionalLight(
   scene
 );
 
-var freza;
-SceneLoader.ImportMesh("", "public/", "endmill.glb", scene, function (
-  newMeshes
-) {
-  // Pozice, měřítko a rotace
-  newMeshes[0].scaling = new Vector3(0.15, 0.15, 0.175);
-  newMeshes[0].rotate(new Vector3(-1, 0, 0), Math.PI / 2);
-  newMeshes[0].position.z = -2;
-  newMeshes[0].position.x = 1;
-  freza = newMeshes[0];
-});
+//vytvoření cesty
 
-scene.registerBeforeRender(function () {});
-//zde uděláme animaci
+//vykreslení křivky
+
+//úhly a rotace
+
+//animace
 
 // povinné vykreslování
 engine.runRenderLoop(function () {
